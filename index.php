@@ -30,3 +30,16 @@
             $_SESSION["shopping_cart"][0] = $item_array;
         }
     }
+
+    if(isset($_GET["action"])){
+        if($_GET["action"] == "delete"){
+            foreach($_SESSION["shopping_cart"] as $keys => $value){
+                if($value["product_id"] == $_GET["id"]){
+                    unset($_SESSION["shopping_cart"][$keys]);
+                    echo '<script>alert("Product has been removed")</script>';
+                    echo '<script>window.location="index.php"</script>';
+                }
+            }
+        }
+    }
+?>
