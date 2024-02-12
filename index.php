@@ -55,7 +55,7 @@
         .product{
             border: 1px solid #eaeaec;
             margin: 2px 2px 8px 2px;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
             background-color: #efefef;
         }
@@ -64,24 +64,26 @@
         }
         .title2{
             text-align: center;
-            color: #66afe9;
+            color: blue;
             background-color: #efefef;
             padding: 2%;
         }
         h2{
             text-align: center;
-            color: #66afe9;
+            color: navy;
             background-color: #efefef;
             padding: 2%;
+            font-weight : bold;
         }
         table th{
             background-color: #efefef;
         }
+      
     </style>
 </head>
 <body>
-    <div class="container" style="width: 65%">
-        <h2>Shopping Cart</h2>
+    <div class="container" style="width: 75%">
+        <h2>Laptop.lk</h2>
         <?php
             $query = "select * from product order by id asc";
             $result = mysqli_query($connection,$query);
@@ -91,7 +93,7 @@
                     <div class="col-md-3" style="float: left;">
                         <form method="post" action="index.php?action=add&id=<?php echo $row["id"];?>">
                             <div class="product">
-                                <img src="<?php echo $row["image"];?>" width="190px" height="200px" class="img-responsive">
+                                <img src="<?php echo $row["image"];?>" width="150px" height="170px" class="img-responsive">
                                 <h5 class="text-info"><?php echo $row["description"];?></h5>
                                 <h5 class="text-danger"><?php echo $row["price"];?></h5>
                                 <input type="text" name="quantity" class="form-control" value="1">
